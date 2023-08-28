@@ -3,6 +3,7 @@ import Contact from "../components/Contact";
 import Course from "../components/Course";
 import Home from "../components/Home";
 import Whatdo from "../components/Whatdo";
+import { useAppContext } from "../context/AppProvider";
 
 //const fondoPanal = "https://raw.githubusercontent.com/CRLSsanz/trade/main/panal1.jpg";
 //const fondoCotizar = "https://img.freepik.com/foto-gratis/hermoso-concepto-criptomoneda_23-2149250215.jpg?w=970";
@@ -11,8 +12,7 @@ const fondo2 =
   "https://c0.wallpaperflare.com/preview/847/634/542/black-business-camera-designer.jpg";
 
 const Main = () => {
-  //const page = Params();
-  //console.log(page);
+  const { texts } = useAppContext();
 
   return (
     <div className="">
@@ -31,9 +31,21 @@ const Main = () => {
         </div>
       </section>
 
+      <div className="flex flex-row justify-between p-4 text-gray-600">
+        <a href="#?=2">
+          <h1 className="w-full border-b border-gray-300 py-0.5 hover:font-bold ">
+            {texts.whatDo}
+          </h1>
+        </a>
+        <a href="#?=3">
+          <h1 className="w-full border-b border-gray-300 py-0.5 hover:font-bold ">
+            {texts.navContact}
+          </h1>
+        </a>
+      </div>
+
       <section
-        id="s2"
-        //id="section2"
+        id="?=2"
         className="min-h-screen bg-gray-100 bg-[#1A2035]XX flex"
         style={
           {
@@ -50,7 +62,7 @@ const Main = () => {
         </div>
       </section>
 
-      <section id="section3" className="min-h-[700px] bg-[#1A2035]X flex">
+      <section id="?=3" className="min-h-[700px] bg-[#1A2035]X flex">
         <div className="my-autoooo w-full">
           <h1 className="hidden h-16"> </h1>
           <Contact />
