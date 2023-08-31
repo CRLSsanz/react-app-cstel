@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { RiShoppingCartLine, RiArrowUpLine } from "react-icons/ri";
 
 const products = [
@@ -27,12 +28,16 @@ const products = [
   },
 ];
 const fondo =
-  "https://c1.wallpaperflare.com/preview/547/595/807/business-computer-contemporary-dark-thumbnail.jpg";
+  "https://c0.wallpaperflare.com/preview/56/891/619/buy-keyboard-enter-button.jpg";
+//"https://c1.wallpaperflare.com/preview/547/595/807/business-computer-contemporary-dark-thumbnail.jpg";
 
 const Shop = () => {
+  const [count, setCount] = useState(0);
+
   return (
     <div className="" id="?">
       <div className="mb-3">
+        <h1 className="hidden h-16 bg-gray-200"> </h1>
         <img src={fondo} alt="shop" />
         <h1 className="px-4 text-gray-200 text-xl -mt-20 pb-16">shop</h1>
         <a
@@ -47,28 +52,33 @@ const Shop = () => {
 
       <div className="px-4 text-gray-700">
         <input
-          className="w-5/6 p-2 border mr-3 mb-3"
+          className="w-full form-input shadow mb-3"
           type="text"
           placeholder="Search"
         />
-        <div className="sticky top-20 inline-block -mb-4">
-          <RiShoppingCartLine className="w-10 h-10 p-1 px-2 bg-cyan-400 rounded-lg" />
-          <h1 className="absolute -top-2 -right-2 h-5 w-5 text-center text-sm bg-gray-50 rounded-full">
-            2
-          </h1>
-        </div>
 
-        <select className="w-full p-2 border mb-10" name="" id="">
+        <select
+          className="w-5/6 md:w-11/12 form-input mr-3 mb-6 shadow-md"
+          name=""
+          id=""
+        >
+          <option value="">Category</option>
           <option value="">Monitor</option>
           <option value="">Ram</option>
           <option value="">Laptop</option>
         </select>
 
+        <div className="sticky top-16 z-50 inline-block -mb-3 ">
+          <RiShoppingCartLine className="w-10 h-9 p-1 px-2 bg-orange-400 text-white rounded-lg shadow-md shadow-orange-600" />
+          <h1 className="absolute -top-2 -right-2 h-5 w-5 text-center text-sm bg-gray-50 text-orange-700 rounded-full text-number shadow-md">
+            {count}
+          </h1>
+        </div>
         {/* CARD */}
         {products.map((item, index) => (
           <div
             key={index}
-            className=" bg-gray-50 text-gray-700 border-2 rounded-lg shadow-md mb-5 flex flex-row"
+            className="relative bg-gray-50 text-gray-700 border-2 rounded-lg shadow-md mb-5 flex flex-row"
           >
             <img
               src={item.img}
@@ -76,11 +86,17 @@ const Shop = () => {
               //style={{ width: "80px" }}
               className="w-[200px] h-[180px] rounded-l-lg"
             />
-            <div className="p-4 flex flex-col justify-evenly text-center">
+            <div className="p-3 flex flex-col justify-between text-center">
               <h1>{item.name}</h1>
               <h1 className="text-gray-400 text-sm">{item.description}</h1>
-              <h1 className="text-xl ">${item.price}.00</h1>
+              <h1 className="text-xl text-number ">${item.price}.00</h1>
             </div>
+            <h1
+              onClick={() => setCount(count + 1)}
+              className="absolute bottom-1 left-1 px-2 py-1 rounded-lg border bg-gray-500/50 text-white"
+            >
+              Add to cart
+            </h1>
           </div>
         ))}
       </div>

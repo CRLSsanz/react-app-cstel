@@ -19,7 +19,7 @@ const translations = {
     whatDO_2Title: "Assistance",
     whatDO_2Text:
       "Assistance and repairs, configuration and maintenance of your desktop computer, portatile, tablet, windows, linux, Macos, networks).",
-    whatDO_3Title: "RENEW",
+    whatDO_3Title: "Renew",
     whatDO_3Text:
       "We offer you a wide range of solutions and offers for all your needs. Laptops, desktops and accessories of all kinds.",
   },

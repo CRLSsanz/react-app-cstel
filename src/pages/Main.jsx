@@ -79,11 +79,13 @@ const Main = () => {
         </div>
       </section>
 
-      <a href="#?" className="sticky bottom-3 flex justify-center p-1.5 ">
-        <h1 className="w-9 h-9 p-1.5 text-gray-600 text-xl bg-gray-100/50 shadow border-2 rounded-full">
-          <RiArrowUpLine />
-        </h1>
-      </a>
+      <div className="flex justify-center sticky bottom-3">
+        <a href="#?" className=" p-1.5 ">
+          <h1 className="w-9 h-9 p-1.5 text-gray-600 text-xl bg-gray-100/50 shadow border-2 rounded-full">
+            <RiArrowUpLine />
+          </h1>
+        </a>
+      </div>
 
       {/* FOOTER */}
       <p className="w-full bg-[#1A2035] text-xs text-center py-20">

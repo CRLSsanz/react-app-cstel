@@ -14,7 +14,7 @@ const Contact = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     alert("Sending Form");
-    window.location = "#section1";
+    window.location = "#";
   };
 
   return (
@@ -25,38 +25,47 @@ const Contact = () => {
           alt="contact"
         />
       </div>
-      <div className="px-4">
-        <h1 className="text-2xl mb-3 font-semibold text-cyan-500">
+      <div className="px-6">
+        <h1 className="text-2xl mb-3 font-medium text-cyan-500">
           {texts.contactTitle}
         </h1>
 
-        <p className="text-sm text-gray-300 mb-6">{texts.contactText}</p>
+        <p className="text-sm text-gray-400 mb-6">{texts.contactText}</p>
 
         <form onSubmit={handleSubmit} className="text-gray-700">
-          <input
-            type="text"
-            className="w-full p-2  border border-cyan-600 rounded mb-3"
-            placeholder="Name"
-          />
-          <input
-            type="email"
-            className="w-full p-2  border border-cyan-600 rounded mb-3"
-            placeholder="Email"
-          />
-          <input
-            type="text"
-            className="w-full p-2  border border-cyan-600 rounded mb-3"
-            placeholder="Subject"
-          />
-          <textarea
-            rows="4"
-            className="w-full p-2  border border-cyan-600 rounded mb-3"
-            placeholder="Message"
-          ></textarea>
+          <div className="relative mb-4">
+            <input
+              type="text"
+              className="form-input-floating peer"
+              placeholder=" "
+            />
+            <label className="absolute form-label-floating">Name</label>
+          </div>
+
+          <div className="relative mb-4">
+            <input
+              type="email"
+              className="form-input-floating peer"
+              placeholder=" "
+            />
+            <label className="absolute form-label-floating">Email</label>
+          </div>
+
+          <div className="relative mb-4">
+            <textarea
+              rows="4"
+              className="form-input-floating peer"
+              placeholder=" "
+            ></textarea>
+            <label className="absolute text-base text-gray-500 duration-300 transform -translate-y-4 scale-75 top-2 z-0 origin-[0] bg-gray-50  px-2 peer-focus:px-2 peer-focus:text-cyan-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/4 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1">
+              Message
+            </label>
+          </div>
+
           <div className="flex justify-end">
             <button
               type="submit"
-              className="px-4 py-2 border border-cyan-600 text-cyan-500"
+              className="text-white bg-gradient-to-l from-cyan-600 to-cyan-400 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-teal-300 shadow-lg shadow-teal-500/50 font-medium rounded-md text-sm px-8 py-2.5 text-center"
             >
               {texts.contactSend}
             </button>
